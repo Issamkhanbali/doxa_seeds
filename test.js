@@ -106,7 +106,7 @@ const fruitData = {
   },
    squash: {
     title: "squash Types",
-    description: "A squash is a cultivated winter squash in the genus Cucurbita.[1][2] The term is most commonly applied to round, orange-colored squash varieties, but does not possess a scientific definition. It may be used in reference to many different squashes of varied appearance and belonging to multiple species in the Cucurbita genus.[3]",
+    description: "A pumpkin is a cultivated winter squash in the genus Cucurbita.[1][2] The term is most commonly applied to round, orange-colored squash varieties, but does not possess a scientific definition. It may be used in reference to many different squashes of varied appearance and belonging to multiple species in the Cucurbita genus.[3]",
     types: [
       { name: "Long Island Cheese", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgFFPijyOULmGyGKCI0oYgZR-se6rBlFpRsg&s" },
       { name: "Baby bear", img: "https://www.pfalzmarkt.de/wp-content/uploads/kuerbis-babybear-1.jpg" },
@@ -206,7 +206,16 @@ const fruitData = {
   },
   // Add cucumber, eggplant, carrot...
 };
+document.querySelector("#popup .close").addEventListener("click", () => {
+  popup.style.display = "none";
+});
 
+// (Optional) Close popup when clicking outside of it
+window.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
 // Popup elements
 const popup = document.getElementById("popup");
 const popupTitle = document.getElementById("popup-title");
