@@ -206,44 +206,57 @@ const fruitData = {
   },
   // Add cucumber, eggplant, carrot...
 };
-document.querySelector("#popup .close").addEventListener("click", () => {
-  popup.style.display = "none";
-});
+document.addEventListener("DOMContentLoaded", () => {
+  // Popup elements
+  const popup = document.getElementById("popup");
+  const popupTitle = document.getElementById("popup-title");
+  const popupDesc = document.getElementById("popup-description");
+  const popupTypes = document.getElementById("popup-types");
+  const closeBtn = popup.querySelector(".close");
 
-// (Optional) Close popup when clicking outside of it
-window.addEventListener("click", (e) => {
-  if (e.target === popup) {
+  // Close button functionality
+  closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
-  }
-});
-// Popup elements
-const popup = document.getElementById("popup");
-const popupTitle = document.getElementById("popup-title");
-const popupDesc = document.getElementById("popup-description");
-const popupTypes = document.getElementById("popup-types");
+  });
 
-document.querySelectorAll(".veggie-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const key = card.dataset.key;
-    const data = fruitData[key];
-    if (!data) {
-      alert("No data for this item.");
-      return;
+  // (Optional) Close popup when clicking outside
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
     }
+  });
 
-    popupTitle.textContent = data.title;
-    popupDesc.textContent = data.description;
-    popupTypes.innerHTML = data.types.map(type => `
-      <div class="type-item" style="text-align:center;">
-        <img src="${type.img}" alt="${type.name}" style="max-width:80px; max-height:80px; display:block; margin: 0 auto;">
-        <span>${type.name}</span>
-      </div>
-    `).join("");
+  // (Optional) Close popup with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      popup.style.display = "none";
+    }
+  });
 
-    popup.style.display = "block";
+  // Open popup when clicking on a card
+  document.querySelectorAll(".veggie-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const key = card.dataset.key;
+      const data = fruitData[key];
+      if (!data) {
+        alert("No data for this item.");
+        return;
+      }
+
+      popupTitle.textContent = data.title;
+      popupDesc.textContent = data.description;
+      popupTypes.innerHTML = data.types.map(type => `
+        <div class="type-item" style="text-align:center;">
+          <img src="${type.img}" alt="${type.name}" 
+               style="max-width:80px; max-height:80px; display:block; margin: 0 auto;">
+          <span>${type.name}</span>
+        </div>
+      `).join("");
+
+      popup.style.display = "block"; // or "flex" if using flexbox
+    });
   });
 });
-
 
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
