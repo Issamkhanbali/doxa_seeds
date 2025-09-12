@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doxa Seeds Style Website</title>
+  <link rel="stylesheet" href="test.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.veggie-section {
+  background-color: #f5f5eb;
+  padding: 50px 20px;
+}
+
+.veggie-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.veggie-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.veggie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.veggie-label {
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: #274a40;
+  color: white;
+}
+
+.veggie-card:hover {
+  transform: scale(1.05);
+}
+
+.fruits_title {
+  background-color: #274a40;
+  padding: 2%;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.3em;
+}
+ .about-section {
+    background: #f9fafc;
+    padding: 60px 20px;
+    font-family:  'Nunito', 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .about-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .about-container h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #2c7a63;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  .about-container h3 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    color: #2c7a63;
+  }
+
+  .about-container p {
+    margin-bottom: 18px;
+    text-align: justify;
+  }
+
+  .bold-text {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+  }
+/* 📱 Mobile version */
+@media (max-width: 600px) {
+  .veggie-section {
+    padding: 25px 10px;
+  }
+
+  .veggie-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 15px;
+  }
+
+  .veggie-card {
+    border-radius: 8px;
+  }
+
+  .veggie-card img {
+    height: 150px; /* smaller images for phones */
+    padding: 5px;
+  }
+
+  .veggie-label {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .fruits_title {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+        <img id="id_logo_img" src="images/logo.jpeg" alt="Logo" 
+        onclick="location.href='index.html'" 
+        style="cursor: pointer;" />
+    </div>
+      <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+<nav class="main-nav" id="mainNav">
+      <ul>
+        <li>
+          <a href="index.html" data-section="how-we-are">Who We Are</a>
+        </li>
+        
+        <li>
+          <a href="#" data-section="our-range">Our Range</a>
+          <div class="submenu" id="our-range-submenu">
+            <div>
+              <a href="fruits.html"><p>vegetables</p></a>
+          <a href="fruits.html" class="active"><p>fruits</p></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="find_us.html"  data-section="find-us">Find Us</a></li>
+        <!-- <li><a href="news.html" data-section="news">News</a></li> -->
+        <li><a href="contact_us.html"  data-section="contact-us">Contact Us</a></li>
+        <!-- <li>
+          <a href="join_us.html" data-section="join-us">Join Us</a> -->
+          <!-- <div class="submenu" id="join-us-submenu">
+            <div>
+              <h4>JOIN US</h4>
+              <a href="#"><p>Our current vacancies</p></a>
+            </div>
+          </div> -->
+        <!-- </li> -->
+        <!-- <li><a href="newsroom.html"  data-section="newsroom">Newsroom</a></li> -->
+      </ul>
+    </nav>
+    <div class="actions">
+     <!-- <select id="langSelector">
+  <option value="EN">EN</option>
+</select> -->
+      <!-- <button class="site-btn">Our Sites</button> -->
+    </div>
+  </header>
+  
+<section class="hero">
+  <img style="width:100%;object-fit: contain; " 
+       src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" 
+       alt="Field" class="hero-bg" />
+</section>
+
+<section class="about-section">
+  <div class="about-container">
+    <h2 id="text2">Doxa Seeds Range</h2>
+
+    <h3>Solanaceae: A Growing and Diversified Portfolio</h3>
+    <p>
+      With a longstanding reputation in the solanaceae segment, Doxa Seeds has successfully set benchmarks in a highly specialized and segmented market. Our tomato varieties have become the standard in key regions such as Africa, Central America, and parts of the Middle East. Similarly, our sweet pepper varieties are rapidly expanding their presence in European export markets.
+    </p>
+    <p>
+      If you've enjoyed hot pepper sauces, pastes, or powders in certain North African countries, there is a strong likelihood you’ve already experienced the flavor of our hot pepper varieties—widely recognized as the market standard in this region. Complementing this portfolio is our robust rootstock range, renowned for its strong root systems, enhanced disease resistance, and comprehensive offering tailored to varying levels of plant vigor. We also offer a good range of eggplants for covered and open field plantation.
+    </p>
+
+    <h3>Squashes and Melons: Diversifying for Emerging Markets</h3>
+    <p>
+      Drawing on its deep expertise in Asia, Doxa Seeds has established kabocha squash as a cornerstone of its portfolio. Renowned for their exceptional flavor, our kabocha varieties range from early to late types and include mini kabocha, positioning Doxa Seeds as a market leader in this category.
+    </p>
+    <p>
+      In the highly segmented melon market—shaped by diverse regional consumption patterns—we are expanding our presence, particularly in Asia, with muskmelon as our flagship variety. Valued for its superior taste and cultural significance as a premium gift in Japan, muskmelon is a key focus of our research efforts. We prioritize high Brix levels and strong resistance to major diseases such as powdery mildew and fusarium.
+    </p>
+    <p>
+      Our watermelon breeding program centers on the Crimson Sweet type, with a continued emphasis on quality, reliability, and grower satisfaction.
+    </p>
+
+    <h3>Roots and Bulbs: A Global Portfolio</h3>
+    <p>
+      Doxa Seeds stands as a global leader in carrot breeding, thanks to the exceptional performance and reliability of its varieties developed through extensive research. With over 200 years of expertise, the company has played a pivotal role in the development of key carrot types such as Nantes and Kuroda.
+    </p>
+    <p>
+      Our roots and bulbs range extends beyond carrots to include a diverse selection of high-quality crops: beetroot, French breakfast radish (half-long white-tipped), Japanese radish (daikon), onion, and bunching onion—each developed to meet the specific needs of growers and markets worldwide.
+    </p>
+
+    <h3>Brassicas: Strategic Focus on Cauliflower and Broccoli</h3>
+    <p>
+      Doxa Seeds continues to strengthen its global presence through sustained investment in its international cauliflower research program. Our portfolio includes highly adaptable and reliable varieties, known for their consistent performance—even under challenging climatic conditions.
+    </p>
+    <p>
+      Leveraging our Japanese heritage, we are also advancing breeding efforts in early cabbage and broccoli, while exploring innovative brassica products. This approach supports the ongoing diversification and expansion of our brassica range to meet the evolving needs of global markets.
+    </p>
+
+    <!-- <p id="text4" class="bold-text">Everywhere, closer to you.</p> -->
+  </div>
+</section>
+  <section class="about-section">
+    <div class="about-container">
+        <h1 class="fruits_title" id="system-breadcrumb" class="visually-hidden">Fruits</h1>
+    </div>
+  </section>
+
+<section class="veggie-section" >
+  <div class="veggie-grid">
+
+    <div class="veggie-card" data-key="Melon">
+      <img src="images\istockphoto-910127132-612x612-removebg-preview.png" alt="Mango">
+      <div class="veggie-label">Melon</div>
+    </div>
+
+    <div class="veggie-card" data-key="watermelon">
+      <img src="images\61r5l3+Ml7L._UF1000_1000_QL80_-removebg-preview.png" alt="Watermelon">
+      <div class="veggie-label">Watermelon</div>
+    </div>
+
+    <!-- <div class="veggie-card" data-key="Strawberry">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYhH7x0b_4GdHC4IhChB6EeC4KJLXcUkQCNA&s" alt="Strawberry">
+      <div class="veggie-label">Strawberry</div>
+    </div> -->
+
+    <!-- <div class="veggie-card" data-key="Orange">
+      <img src="https://www.quanta.org/orange/orange.jpg" alt="Orange">
+      <div class="veggie-label">Orange</div>
+    </div> -->
+
+    <!-- <div class="veggie-card" data-key="Apple">
+      <img src="https://cdn.mafrservices.com/sys-master-root/h59/hc5/35139577085982/369185_main.jpg" alt="Apple">
+      <div class="veggie-label">Apple</div>
+    </div> -->
+
+    <!-- <div class="veggie-card" data-key="Grapes">
+      <img src="https://extension.psu.edu/media/catalog/product/i/m/image_3777_1_2_1_262_1_23_1_28_2_11_2_2_2_38_1_94_7_2_24_46_6_414_49_21_45_2_25_15_1_9_1_18_9_6_5_1_21_3_29_8_2_1_13_5_1_2232.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=336&width=504&canvas=504:336" alt="Grapes">
+      <div class="veggie-label">Grapes</div>
+    </div>
+
+    <div class="veggie-card" data-key="Banana">
+      <img src="https://www.bobtailfruit.co.uk/media/mageplaza/blog/post/4/2/42e9as7nataai4a6jcufwg.jpeg" alt="Banana">
+      <div class="veggie-label">Banana</div>
+    </div> -->
+
+  </div>
+</section>
+  <section class="about-section" >
+    <div class="about-container">
+        <h1 class="fruits_title" id="system-breadcrumb" class="visually-hidden">vegetables</h1>
+    </div>
+  </section>
+  
+
+
+  <section class="veggie-section">
+  <div class="veggie-grid">
+
+    <div class="veggie-card" data-key="Pepper">
+      <img src="images\istockphoto-1124401536-612x612-removebg-preview.png" alt="Pepper">
+      <div class="veggie-label">Pepper</div>
+    </div>
+
+    <div class="veggie-card" data-key="tomato">
+      <img src="images\of-tomato-isolated-on-white-background-photo-removebg-preview.png" alt="Tomato">
+      <div class="veggie-label">Tomato</div>
+    </div>
+
+    <div class="veggie-card" data-key="eggplant">
+      <img src="images\isolated-eggplants-removebg-preview.png" alt="Eggplant">
+      <div class="veggie-label">Eggplant</div>
+    </div>
+
+    <div class="veggie-card" data-key="Onion">
+      <img src="images\onion-with-slices-on-transparent-background-free-png-removebg-preview.png" alt="Onion">
+      <div class="veggie-label">Onion</div>
+    </div>
+
+    <div class="veggie-card" data-key="cucumber">
+      <img src="images\1918-removebg-preview.png" alt="Cucumber">
+      <div class="veggie-label">Cucumber</div>
+    </div>
+
+    <div class="veggie-card" data-key="squash">
+      <img src="images\SQUASH-removebg-preview.png" alt="squash">
+      <div class="veggie-label">Squash</div>
+    </div>
+
+    <div class="veggie-card" data-key="carrot">
+      <img src="images\istockphoto-1388403435-612x612-removebg-preview.png" alt="Carrot">
+      <div class="veggie-label">Carrot</div>
+    </div>
+
+  </div>
+</section>
+<div id="popup" style="display:none; position:fixed; top:10%; left:50%; transform: translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000; max-width: 400px;">
+  <button class="close" style="float:right; cursor:pointer;">&times;</button>
+  <h2 id="popup-title"></h2>
+  <p id="popup-description"></p>
+  <div id="popup-types" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+</div>
+  <section class="footer-top">
+    <div class="footer-sites">
+      <div>
+        <strong>Netherlands:</strong> Holland
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Bottom -->
+<footer class="footer-bottom">
+  <div class="footer-columns">
+    <!-- Left logo -->
+    <div class="footer-logo">
+      <img src="images/logo.jpeg" alt="Logo" />
+      
+    </div>
+
+    <!-- Links -->
+    <div class="footer-links">
+      <h4>OUR RANGE</h4>
+      <p>LEAFY</p>
+      <p>SOLANACEAE</p>
+      <p>ROOTS AND BULBS</p>
+      <p>GOURDS AND BRASSICAS</p>
+      <p>INDUSTRY RANGE</p>
+    </div>
+    <div class="footer-links">
+      <h4>INFO</h4>
+      <p>CONTACT US</p>
+      <p>FIND US</p>
+    </div>
+    <!-- Social -->
+    <div class="footer-social">
+      <h4>FOLLOW US</h4>
+  <!-- <a href="https://www.linkedin.com" target="_blank">
+  <i class="fab fa-linkedin fa-2x" style="color: #0077b5;"></i>
+</a> -->
+
+<!-- Instagram -->
+<a href="https://www.instagram.com" target="_blank" style="margin: 0 8px;">
+  <i class="fab fa-instagram fa-2x" style="color: #e4405f;"></i>
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com" target="_blank" style="margin: 0 8px;">
+  <i class="fab fa-facebook fa-2x" style="color: #1877f2;"></i>
+</a>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/1234567890" target="_blank" style="margin: 0 8px;">
+  <i class="fab fa-whatsapp fa-2x" style="color: #25d366;"></i>
+</a>
+      <img src="images/logo.jpeg" alt="Sub Logo" />
+    </div>
+  </div>
+</footer>
+<script src="test.js"></script>
+
+</body>
+</html>
