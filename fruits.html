@@ -64,7 +64,110 @@
     line-height: 1.8;
     color: #333;
   }
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* allow scrolling if content taller than screen */
+  padding: 20px 0;  /* vertical padding */
+}
+
+/* Scrollable popup box */
+.popup-content {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh; /* max height of popup */
+  overflow-y: auto;
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  margin: auto; /* center when content smaller than viewport */
+}
+
+/* Close button */
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Popup title */
+.popup-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Popup paragraph */
+.popup-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Popup types container */
+#popup-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Individual type items */
+#popup-types .type-item {
+  flex: 1 1 80px;
+  max-width: 100px;
+  text-align: center;
+}
+
+#popup-types .type-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== Mobile-specific adjustments ===== */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 95%;
+    padding: 15px;
+    max-height: 90vh;
+  }
+
+  .popup-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .popup-content p {
+    font-size: 0.95rem;
+  }
+
+  #popup-types {
+    /* flex-direction: column; */
+    gap: 8px;
+  }
+
+  #popup-types .type-item img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+}
   .about-container {
     max-width: 1000px;
     margin: auto;
@@ -305,11 +408,13 @@
 
   </div>
 </section>
-<div id="popup" style="display:none; position:fixed; top:10%; left:50%; transform: translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000; max-width: 400px;">
-  <button class="close" style="float:right; cursor:pointer;">&times;</button>
-  <h2 id="popup-title"></h2>
-  <p id="popup-description"></p>
-  <div id="popup-types" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <button class="close">&times;</button>
+    <h2 id="popup-title"></h2>
+    <p id="popup-description"></p>
+    <div id="popup-types" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+  </div>
 </div>
   <section class="footer-top">
     <div class="footer-sites">
