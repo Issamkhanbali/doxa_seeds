@@ -233,72 +233,39 @@ textarea {
     </div>
     
   </nav>
-  <form class="contact-form">
-    <div class="form-top">
-      <select class="role-select">
-        <option selected>Grower</option>
-        <option>Distributor</option>
-        <option>Other</option>
-   <!-- <option selected>xxxx</option>
-        <option>xxxxxxx</option>
-        <option>xxxxxxxxxxx</option> -->
-      </select>
-    </div>
+  <form class="contact-form" id="contact-form">
+
 
     <div class="form-row">
       <div class="form-group">
         <label>Name*</label>
-        <!-- <label>xxxxxxx</label> -->
-        <input type="text" required>
+        <input type="text" id="name"required>
       </div>
       <div class="form-group">
         <label>Company</label>
-        <!-- <label>xxxxxxxxxx</label> -->
-        <input type="text">
+        <input type="text" id="company">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label>E-mail*</label>
-        <!-- <label>xxxxxxxxx</label> -->
-        <input type="email" required>
+        <input type="email" id="email" required>
       </div>
-      <div class="form-group">
-        <label>Country</label>
-        <!-- <label>xxxxxxxx</label> -->
-        <select>
-          <option>- Select -</option>
-          <option>USA</option>
-          <option>France</option>
-          <option>Japan</option>
-           <!-- <option>- Select -</option>
-          <option>xxxx</option>
-          <option>xxxxxx</option>
-          <option>xxxxxx</option> -->
-        </select>
-      </div>
+    
     </div>
 
     <div class="form-row">
       <div class="form-group full">
         <label>Subject</label>
-        <!-- <label>xxxxxxx</label> -->
-        <select>
-          <option>- Select -</option>
-          <option>General Inquiry</option>
-          <option>Product Info</option>
-          <!-- <option>xxxxxx</option>
-          <option>xxxxxxxxxx</option> -->
-        </select>
+         <input type="subject" id="subject" required>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group full">
         <label>Message*</label>
-        <!-- <label>xxxxxxxxx</label> -->
-        <textarea required></textarea>
+        <textarea required id="message"></textarea>
       </div>
     </div>
 
@@ -313,11 +280,7 @@ textarea {
       To learn more about the management of your personal data and the exercise of your rights, please see 
       <a href="#">the following page</a>.
     </p>
-    <!-- <p class="disclaimer">
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-      <a href="#">the following page</a>.
-    </p> -->
+  
   </form>
 </div>
 
@@ -373,12 +336,14 @@ textarea {
 </a> -->
 
 <!-- Instagram -->
-<a href="https://www.instagram.com" target="_blank" style="margin: 0 8px;">
+<a href="https://www.instagram.com/doxaseeds?igsh=MTg4eWsweGwwMG1reg%3D%3D&utm_source=qr" target="_blank" style="margin: 0 8px;">
   <i class="fab fa-instagram fa-2x" style="color: #e4405f;"></i>
 </a>
 
 <!-- Facebook -->
-<a href="https://www.facebook.com" target="_blank" style="margin: 0 8px;">
+<a href="https://www.facebook.com/share/1Zvsg2VCWV/?mibextid=wwXIfr" 
+   target="_blank" 
+   style="margin: 0 8px;">
   <i class="fab fa-facebook fa-2x" style="color: #1877f2;"></i>
 </a>
 
@@ -391,6 +356,29 @@ textarea {
   </div>
 </footer>
 <script src="test.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      // ✅ Use your actual PUBLIC KEY here, not your email
+      emailjs.init("YOUR_PUBLIC_KEY"); 
+   })();
 
+   document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // ✅ Use SERVICE_ID and TEMPLATE_ID, not your email
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        name: document.getElementById("name").value,
+        company: document.getElementById("company").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      }).then(function() {
+        alert("✅ Message sent successfully!");
+      }, function(error) {
+        alert("❌ Failed to send message: " + JSON.stringify(error));
+      });
+   });
+</script>
 </body>
 </html>
